@@ -17,7 +17,7 @@ Import-Module OSD -Force
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Start OSDCloud"
-Start-OSDCloudGUI -CloudDriver * -Brand "AHS-Deployment"
+Start-OSDCloudGUI
 
 #PostAction
 Write-Host  -ForegroundColor Cyan "Post Actions..."
