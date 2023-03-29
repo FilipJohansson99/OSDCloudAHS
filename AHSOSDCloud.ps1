@@ -17,10 +17,17 @@ Start-OSDCloudGUI -Brand 'AHS-Deployment' -ZTI
 
 #PostAction
 Write-Host  -ForegroundColor Cyan "Post Actions..."
+
+PowerShell iex (irm https://raw.githubusercontent.com/AkosBakos/OSDCloud/main/OOBE.ps1)
+
 Write-Host  -ForegroundColor Cyan "Updating Windows..."
-UpdateWindows
+#PSUpdateWindows
+
 Write-Host  -ForegroundColor Cyan "Updating Drivers..."
-UpdateDrivers
+#PSUpdateDrivers
+
+Write-Host  -ForegroundColor Cyan "CHecking Autopilot Info..."
+Get-WindowsAutopilotInfo -Online
 
 #Write-Host  -ForegroundColor Cyan "Cleaning up..."
 #Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse
@@ -29,6 +36,6 @@ UpdateDrivers
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
 #Restart from WinPE
-Write-Host  -ForegroundColor Cyan "Deployment Completed press any key to restart..."
+Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting..."
 cmd /c pause
 wpeutil reboot
