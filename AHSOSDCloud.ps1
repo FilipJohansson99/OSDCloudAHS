@@ -23,8 +23,8 @@ Write-Host  -ForegroundColor Cyan "Updating Drivers..."
 UpdateDrivers
 
 #Write-Host  -ForegroundColor Cyan "Cleaning up..."
-#Get-ChildItem -Path X:\OSDCloud -Recurse | Remove-Item -force -recurse
-#Remove-Item X:\OSDCloud -Force 
+#Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse
+#Remove-Item C:\OSDCloud -Force 
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
