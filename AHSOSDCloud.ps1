@@ -18,13 +18,13 @@ Start-OSDCloudGUI -Brand 'AHS-Deployment' -ZTI
 #PostAction
 Write-Host  -ForegroundColor Cyan "Post Actions..."
 
-PowerShell iex (irm https://raw.githubusercontent.com/FilipJohansson99/OSDCloudAHS/main/AHSOOBE.ps1)
-
 Write-Host  -ForegroundColor Cyan "Updating Windows..."
 #PSUpdateWindows
 
 Write-Host  -ForegroundColor Cyan "Updating Drivers..."
 #PSUpdateDrivers
+
+PowerShell iex (irm https://raw.githubusercontent.com/FilipJohansson99/OSDCloudAHS/main/AHSOOBE.ps1)
 
 Write-Host  -ForegroundColor Cyan "Checking Autopilot Info..."
 Get-WindowsAutopilotInfo -Online
