@@ -29,9 +29,10 @@ PowerShell iex (irm https://raw.githubusercontent.com/FilipJohansson99/OSDCloudA
 Write-Host  -ForegroundColor Cyan "Checking Autopilot Info..."
 Get-WindowsAutopilotInfo -Online
 
-#Write-Host  -ForegroundColor Cyan "Cleaning up..."
-#Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse
-#Remove-Item C:\OSDCloud -Force 
+Write-Host  -ForegroundColor Cyan "Cleaning up..."
+Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse
+Remove-Item C:\OSDCloud -Force 
+Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
