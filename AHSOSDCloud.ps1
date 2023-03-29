@@ -26,7 +26,7 @@ Write-Host  -ForegroundColor Cyan "Updating Windows..."
 Write-Host  -ForegroundColor Cyan "Updating Drivers..."
 #PSUpdateDrivers
 
-Write-Host  -ForegroundColor Cyan "CHecking Autopilot Info..."
+Write-Host  -ForegroundColor Cyan "Checking Autopilot Info..."
 Get-WindowsAutopilotInfo -Online
 
 #Write-Host  -ForegroundColor Cyan "Cleaning up..."
