@@ -13,7 +13,7 @@ Start-Sleep -Seconds 1
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud..."
-Start-OSDCloudGUI -Brand 'AHS-Deployment' -ZTI
+Start-OSDCloudGUI -Brand 'AHS-Deployment'
 
 #PostAction
 Write-Host  -ForegroundColor Cyan "Post Actions..."
