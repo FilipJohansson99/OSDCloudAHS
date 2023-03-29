@@ -12,7 +12,7 @@ Start-Sleep -Seconds 1
 
 
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Start OSDCloud"
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud..."
 Start-OSDCloudGUI
 
 #PostAction
@@ -29,6 +29,6 @@ UpdateDrivers
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
 #Restart from WinPE
-Write-Host  -ForegroundColor Cyan "Deployment Completed press any key to restart"
+Write-Host  -ForegroundColor Cyan "Deployment Completed press any key to restart..."
 cmd /c pause
 wpeutil reboot
