@@ -3,19 +3,19 @@ Start-Sleep -Seconds 1
 
 
 
-#Make sure I have the latest OSD Content
-Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
-Install-Module OSD -Force
+#Update OSD
+#Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
+#Install-Module OSD -Force
 
-Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
-Import-Module OSD -Force
+#Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
+#Import-Module OSD -Force
 
 
-#Start OSDCloud ZTI the RIGHT way
+#Start OSDCloudGUI
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud..."
 Start-OSDCloudGUI -Brand 'AHS-Deployment'
 
-#PostAction
+#Post Actions
 Write-Host  -ForegroundColor Cyan "Post Actions..."
 
 Write-Host  -ForegroundColor Cyan "Updating Windows..."
