@@ -1,15 +1,12 @@
 Write-Host  -ForegroundColor Cyan "Starting Deployment..."
 Start-Sleep -Seconds 1
 
-
-
 #Update OSD
-#Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
-#Install-Module OSD -Force
+Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
+Install-Module OSD -Force
 
-#Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
-#Import-Module OSD -Force
-
+Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
+Import-Module OSD -Force
 
 #Start OSDCloudGUI
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud..."
@@ -17,17 +14,6 @@ Start-OSDCloudGUI -Brand 'AHS-Deployment'
 
 #Post Actions
 Write-Host  -ForegroundColor Cyan "Post Actions..."
-
-Write-Host  -ForegroundColor Cyan "Updating Windows..."
-#PSUpdateWindows
-
-Write-Host  -ForegroundColor Cyan "Updating Drivers..."
-#PSUpdateDrivers
-
-PowerShell iex (irm https://raw.githubusercontent.com/FilipJohansson99/OSDCloudAHS/main/AHSOOBE.ps1)
-
-Write-Host  -ForegroundColor Cyan "Checking Autopilot Info..."
-Get-WindowsAutopilotInfo -Online
 
 Write-Host  -ForegroundColor Cyan "Cleaning up..."
 Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse
