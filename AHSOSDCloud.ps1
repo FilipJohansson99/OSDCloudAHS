@@ -1,18 +1,14 @@
 Write-Host  -ForegroundColor Cyan "Starting Deployment..."
 Start-Sleep -Seconds 1
 
-#Change Display Resolution for Virtual Machine
-if ((Get-MyComputerModel) -match 'Virtual') {
-    Write-Host  -ForegroundColor Cyan "Setting Display Resolution to 1600x"
-    Set-DisRes 1600
-}
+
 
 #Make sure I have the latest OSD Content
-Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
-Install-Module OSD -Force
+#Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
+#Install-Module OSD -Force
 
-Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
-Import-Module OSD -Force
+#Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
+#Import-Module OSD -Force
 
 
 #Start OSDCloud ZTI the RIGHT way
