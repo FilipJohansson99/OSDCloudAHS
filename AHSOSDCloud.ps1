@@ -18,8 +18,8 @@ Write-Host  -ForegroundColor Cyan "Post Actions..."
 Write-Host  -ForegroundColor Cyan "Cleaning up..."
 Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse -Confirm:$false
 Remove-Item C:\OSDCloud -Force
-Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
+#Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+#Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
 Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
