@@ -21,6 +21,13 @@ Remove-Item C:\OSDCloud -Force
 #Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
 Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
+Write-Host  -ForegroundColor Yellow "Removing remnants on USB"
+Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false
+Remove-Item C:\OSDCloud\OS -Force
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\OS Removed..."
+Get-ChildItem -Path D:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false
+Remove-Item D:\OSDCloud\DriverPacks -Force
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
