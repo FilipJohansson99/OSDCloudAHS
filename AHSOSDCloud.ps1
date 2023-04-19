@@ -1,6 +1,13 @@
 Write-Host  -ForegroundColor Cyan "Starting Deployment..."
 Start-Sleep -Seconds 1
 
+Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false
+Remove-Item C:\OSDCloud\OS -Force
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\OS Removed..."
+Get-ChildItem -Path D:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false
+Remove-Item D:\OSDCloud\DriverPacks -Force
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
+
 #Update OSD
 Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
 Install-Module OSD -Force
@@ -22,12 +29,7 @@ Remove-Item C:\OSDCloud -Force
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
 Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
 Write-Host  -ForegroundColor Yellow "Removing remnants on USB"
-Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false
-Remove-Item C:\OSDCloud\OS -Force
-Write-Host  -ForegroundColor Yellow "D:\OSDCloud\OS Removed..."
-Get-ChildItem -Path D:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false
-Remove-Item D:\OSDCloud\DriverPacks -Force
-Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
+
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
