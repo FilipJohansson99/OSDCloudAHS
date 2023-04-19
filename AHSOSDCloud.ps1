@@ -1,5 +1,6 @@
 Write-Host  -ForegroundColor Cyan "Starting Deployment..."
 Start-Sleep -Seconds 1
+$ErrorActionPreference = ‘SilentlyContinue’
 Write-Host  -ForegroundColor Yellow "Removing remnants on USB"
 Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false
 Remove-Item C:\OSDCloud\OS -Force
