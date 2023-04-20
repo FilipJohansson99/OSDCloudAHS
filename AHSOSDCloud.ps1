@@ -36,5 +36,6 @@ Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting..."
+Write-Host  -ForegroundColor Yellow "PLEASE REMOVE USB AND NETWORK CONNECTION BEFORE CONTINUING"
 cmd /c pause
 wpeutil reboot
