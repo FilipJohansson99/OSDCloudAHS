@@ -1,23 +1,13 @@
 Write-Host  -ForegroundColor Cyan "Starting Deployment..."
 Start-Sleep -Seconds 1
-Write-Host  -ForegroundColor Yellow "Removing remnants on USB..."
-Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false -erroraction 'silentlycontinue'
-Remove-Item D:\OSDCloud\OS -Force -erroraction 'silentlycontinue'
-Get-ChildItem -Path E:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false -erroraction 'silentlycontinue'
-Remove-Item E:\OSDCloud\OS -Force -erroraction 'silentlycontinue'
-Write-Host  -ForegroundColor Yellow "D:\OSDCloud\OS Removed..."
-Get-ChildItem -Path D:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false -erroraction 'silentlycontinue'
-Remove-Item D:\OSDCloud\DriverPack -Force -erroraction 'silentlycontinue'
-Get-ChildItem -Path E:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false -erroraction 'silentlycontinue'
-Remove-Item E:\OSDCloud\DriverPack -Force -erroraction 'silentlycontinue'
-Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
+
 
 #Update OSD
 Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module"
-Install-Module OSD -Force -erroraction 'silentlycontinue'
+Install-Module OSD -Force -ErrorAction SilentlyContinue
 
 Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module"
-Import-Module OSD -Force -erroraction 'silentlycontinue'
+Import-Module OSD -Force -ErrorAction SilentlyContinue
 
 #Start OSDCloudGUI
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud..."
@@ -27,12 +17,18 @@ Start-OSDCloudGUI -Brand 'AHS-Deployment'
 Write-Host  -ForegroundColor Cyan "Post Actions..."
 
 Write-Host  -ForegroundColor Cyan "Cleaning up..."
-Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse -Confirm:$false -erroraction 'silentlycontinue'
-Remove-Item C:\OSDCloud -Force -erroraction 'silentlycontinue'
+Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse -Confirm:$false -ErrorAction SilentlyContinue
+Remove-Item C:\OSDCloud -Force -ErrorAction SilentlyContinue
 #Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
 Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
-
+Write-Host  -ForegroundColor Yellow "Removing remnants on USB..."
+Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false -ErrorAction SilentlyContinue
+Remove-Item D:\OSDCloud\OS -Force -ErrorAction SilentlyContinue
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\OS Removed..."
+Get-ChildItem -Path D:\OSDCloud\DriverPacks -Recurse | Remove-Item -force -recurse -Confirm:$false -ErrorAction SilentlyContinue
+Remove-Item D:\OSDCloud\DriverPack -Force -ErrorAction SilentlyContinue
+Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
 
 
 Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
