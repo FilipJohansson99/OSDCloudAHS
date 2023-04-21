@@ -21,6 +21,9 @@ Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -force -recurse -Confirm:
 Remove-Item C:\OSDCloud -Force -ErrorAction SilentlyContinue
 #Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
+Get-ChildItem -Path C:\Program Files\WindowsPowerShell\Modules\OSD -Recurse | Remove-Item -force -recurse -Confirm:$false -ErrorAction SilentlyContinue
+Remove-Item C:\Program Files\WindowsPowerShell\Modules\OSD -Force -ErrorAction SilentlyContinue
+
 Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
 Write-Host  -ForegroundColor Yellow "Removing remnants on USB..."
 Get-ChildItem -Path D:\OSDCloud\OS -Recurse | Remove-Item -force -recurse -Confirm:$false -ErrorAction SilentlyContinue
