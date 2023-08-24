@@ -21,8 +21,8 @@ Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -Force -Recurse -Confirm:
 Remove-Item C:\OSDCloud -Force -Recurse -ErrorAction SilentlyContinue
 #Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
-Get-ChildItem -Path C:\Program Files\WindowsPowerShell\Modules\OSD -Recurse | Remove-Item -Force -Recurse -Confirm:$false -ErrorAction SilentlyContinue
-Remove-Item C:\Program Files\WindowsPowerShell\Modules\OSD -Force -Recurse -ErrorAction SilentlyContinue
+#Get-ChildItem -Path C:\Program Files\WindowsPowerShell\Modules\OSD -Recurse | Remove-Item -Force -Recurse -Confirm:$false -ErrorAction SilentlyContinue
+#Remove-Item C:\Program Files\WindowsPowerShell\Modules\OSD -Force -Recurse -ErrorAction SilentlyContinue
 
 #Write-Host  -ForegroundColor Yellow "C:\OSDCloud Removed..."
 #Write-Host  -ForegroundColor Yellow "Removing remnants on USB..."
@@ -40,6 +40,9 @@ Clear-Host
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting..."
-Write-Host  -ForegroundColor Yellow "PLEASE REMOVE USB AND NETWORK CONNECTION BEFORE CONTINUING"
+Write-Host  -ForegroundColor Yellow "INSTALLATION WILL CONTINUE IN OOBE, DO NOT REMOVE USB"
+Write-Host  -ForegroundColor Yellow "While in OOBE open cmd with SHIFT + F10, and enter the following:"
+Write-Host  -ForegroundColor Yellow "D:"
+Write-Host  -ForegroundColor Yellow "oobe.cmd"
 cmd /c pause
 wpeutil reboot
