@@ -99,8 +99,6 @@ if ($WindowsPhase -eq 'AuditMode') {
 if ($WindowsPhase -eq 'OOBE') {
     #Load everything needed to run AutoPilot and Azure KeyVault
     osdcloud-StartOOBE -Display -Language -DateTime -Autopilot -KeyVault -InstallWinGet -WinGetUpgrade -WinGetPwsh
-    devmgmt.msc
-    winver   
     $null = Stop-Transcript -ErrorAction Ignore
 }
 #endregion
