@@ -39,6 +39,7 @@ Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 Clear-Host
 
 #Restart from WinPE
+Write-Host  -ForegroundColor Cyan "Checking Autopilot Info..."
 Get-WindowsAutopilotInfo -Online
 Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting..."
 Write-Host  -ForegroundColor Yellow "PLEASE REMOVE USB AND NETWORK CONNECTION BEFORE CONTINUING"
