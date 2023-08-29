@@ -39,12 +39,11 @@ Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 Clear-Host
 
 #Restart from WinPE
-Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting..."
-Write-Host  -ForegroundColor Yellow "REMOVE NETWORK CONNECTION BEFORE RESTARTING"
+Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting to AuditMode..."
+
 #Write-Host  -ForegroundColor Yellow "INSTALLATION WILL CONTINUE IN OOBE, DO NOT REMOVE USB"
 #Write-Host  -ForegroundColor Yellow "While in OOBE reconnect internet and open cmd with SHIFT + F10. Enter the following:"
 #Write-Host  -ForegroundColor Yellow "D:"
 #Write-Host  -ForegroundColor Yellow "oobe.cmd"
 Set-OSDCloudUnattendAuditMode
-cmd /c pause
 wpeutil reboot
