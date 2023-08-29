@@ -91,6 +91,7 @@ if ($WindowsPhase -eq 'Specialize') {
 
 #region AuditMode
 if ($WindowsPhase -eq 'AuditMode') {
+    osdcloud-StartOOBE -Display -Language -DateTime -Autopilot -KeyVault -InstallWinGet -WinGetUpgrade -WinGetPwsh
     $null = Stop-Transcript -ErrorAction Ignore
 }
 #endregion
