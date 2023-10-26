@@ -2,23 +2,23 @@
 Start-Sleep -Seconds 1
 Write-Host -ForegroundColor Red "THIS INSTALLATION MEDIA IS OUTDATED. PLEASE USE A NEWER USB OR CONTACT ADMINISTRATOR"
 
-#Update OSD
-#Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module..."
-#Install-Module OSD -Force -ErrorAction SilentlyContinue
+Update OSD
+Write-Host  -ForegroundColor Cyan "Updating OSD PowerShell Module..."
+Install-Module OSD -Force -ErrorAction SilentlyContinue
 
-#Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module..."
-#Import-Module OSD -Force -ErrorAction SilentlyContinue
+Write-Host  -ForegroundColor Cyan "Importing OSD PowerShell Module..."
+Import-Module OSD -Force -ErrorAction SilentlyContinue
 
 #Start OSDCloudGUI
-#Write-Host  -ForegroundColor Cyan "Starting AHSCloud..."
-#Start-OSDCloudGUI -Brand 'AHS-Deployment'
+#rite-Host  -ForegroundColor Cyan "Starting AHSCloud..."
+#tart-OSDCloudGUI -Brand 'AHS-Deployment'
 
-#Post Actions
-#Write-Host  -ForegroundColor Cyan "Post Actions..."
+Post Actions
+Write-Host  -ForegroundColor Cyan "Post Actions..."
 
-#Write-Host  -ForegroundColor Cyan "Cleaning up..."
-#Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -Force -Recurse -Confirm:$false -ErrorAction SilentlyContinue
-#Remove-Item C:\OSDCloud -Force -Recurse -ErrorAction SilentlyContinue
+Write-Host  -ForegroundColor Cyan "Cleaning up..."
+Get-ChildItem -Path C:\OSDCloud -Recurse | Remove-Item -Force -Recurse -Confirm:$false -ErrorAction SilentlyContinue
+Remove-Item C:\OSDCloud -Force -Recurse -ErrorAction SilentlyContinue
 #Copy-Item "X:\startup.cmd" -Destination "C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 #Copy-Item "X:\startup.ps1" -Destination "C:\OSDClod"
 #Get-ChildItem -Path C:\Program Files\WindowsPowerShell\Modules\OSD -Recurse | Remove-Item -Force -Recurse -Confirm:$false -ErrorAction SilentlyContinue
@@ -34,17 +34,17 @@ Write-Host -ForegroundColor Red "THIS INSTALLATION MEDIA IS OUTDATED. PLEASE USE
 #Write-Host  -ForegroundColor Yellow "D:\OSDCloud\DriverPacks Removed..."
 
 
-#Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
+Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
 #Clear-Host
 
-#Restart from WinPE
-#Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting to AuditMode..."
+Restart from WinPE
+Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting to AuditMode..."
 
-#Write-Host  -ForegroundColor Yellow "INSTALLATION WILL CONTINUE IN OOBE, DO NOT REMOVE USB"
-#Write-Host  -ForegroundColor Yellow "While in OOBE reconnect internet and open cmd with SHIFT + F10. Enter the following:"
-#Write-Host  -ForegroundColor Yellow "D:"
-#Write-Host  -ForegroundColor Yellow "oobe.cmd"
-#Set-OSDCloudUnattendAuditMode
+Write-Host  -ForegroundColor Yellow "INSTALLATION WILL CONTINUE IN OOBE, DO NOT REMOVE USB"
+Write-Host  -ForegroundColor Yellow "While in OOBE reconnect internet and open cmd with SHIFT + F10. Enter the following:"
+Write-Host  -ForegroundColor Yellow "D:"
+Write-Host  -ForegroundColor Yellow "oobe.cmd"
+Set-OSDCloudUnattendAuditMode
 cmd /c pause
 wpeutil reboot
