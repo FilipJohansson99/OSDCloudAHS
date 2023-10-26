@@ -13,7 +13,7 @@ Import-Module OSD -Force -ErrorAction SilentlyContinue
 #rite-Host  -ForegroundColor Cyan "Starting AHSCloud..."
 #tart-OSDCloudGUI -Brand 'AHS-Deployment'
 
-Post Actions
+#Post Actions
 Write-Host  -ForegroundColor Cyan "Post Actions..."
 
 Write-Host  -ForegroundColor Cyan "Cleaning up..."
@@ -38,7 +38,7 @@ Write-Host  -ForegroundColor Cyan "Post Actions Completed..."
 
 #Clear-Host
 
-Restart from WinPE
+#Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Deployment Completed Restarting to AuditMode..."
 
 Write-Host  -ForegroundColor Yellow "INSTALLATION WILL CONTINUE IN OOBE, DO NOT REMOVE USB"
